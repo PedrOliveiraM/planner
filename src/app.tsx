@@ -5,8 +5,10 @@ import {
   UserRoundPlus,
   Settings2,
   X,
+  AtSign,
+  Plus,
 } from 'lucide-react';
-import { useState } from 'react';
+import { FormEvent, useState } from 'react';
 function App() {
   const [isGuestInputOpen, setIsGuestInputOpen] = useState(false);
 
@@ -18,6 +20,25 @@ function App() {
 
   function handleModal() {
     setIsModalOpen(!isModalOpen);
+  }
+
+  const [emailsToInvite, setEmailsToInvite] = useState<string[]>([]);
+
+  function addNewEmailToInvite(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    const data = new FormData(event.currentTarget);
+    const email = data.get('email')?.toString();
+    console.log(email);
+
+    if (!email) return;
+
+    if (emailsToInvite.includes(email)) return alert('Email já adicionado');
+
+    setEmailsToInvite([...emailsToInvite, email]);
+  }
+
+  function removeEmailToInvite(email: string) {
+    setEmailsToInvite(emailsToInvite.filter((e) => e !== email));
   }
 
   return (
@@ -108,9 +129,41 @@ function App() {
                     participação na viagem.
                   </p>
                 </div>
-                <div className="conteiner de emails">
-                  <span>pedro@gmail.com</span>
+                <div className="flex flex-wrap gap-2">
+                  {emailsToInvite.map((email) => (
+                    <div
+                      key={email}
+                      className="flex items-center gap-2 px-2.5 py-1.5 bg-zinc-800 rounded-md w-auto"
+                    >
+                      <span className="text-zinc-200">{email}</span>
+                      <button onClick={() => removeEmailToInvite(email)}>
+                        <X className="text-zinc-400 size-4" />
+                      </button>
+                    </div>
+                  ))}
                 </div>
+
+                <form onSubmit={addNewEmailToInvite}>
+                  <div className="flex items-center bg-zinc-950 h-16 rounded-xl px-4 shadow-shape gap-3">
+                    <div className="flex items-center gap-2 flex-1">
+                      <AtSign className="size-5 text-zinc-400" />
+                      <input
+                        type="text"
+                        name="email"
+                        className="bg-transparent text-lg placeholder-zinc-400 outline-none flex-1 text-left text-zinc-400"
+                        placeholder="Digite o e-mail do convidado"
+                      />
+                    </div>
+                    <div className="w-px h-6 bg-zinc-800"></div>
+                    <button
+                      type="submit"
+                      className="bg-lime-300 text-lime-950 px-5 py-2 rounded-lg  flex items-center gap-2 font-medium hover:bg-lime-400 "
+                    >
+                      Convidar
+                      <Plus className="size-5 text-lime-950" />
+                    </button>
+                  </div>
+                </form>
               </div>
             </div>
           </div>
