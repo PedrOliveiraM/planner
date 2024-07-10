@@ -1,30 +1,42 @@
-# React + TypeScript + Vite
+# Planner ![Em Andamento](https://img.shields.io/badge/status-Em%20andamento-yellow)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Sobre
 
-Currently, two official plugins are available:
+Planner é um projeto de agendamento de viagens, onde o usuario pode adicionar os participantes, o lugar de destino e o dia da viajem. Ideal para planejar roteiro de viajens seja sozinho ou em grupo.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tecnologias
 
-## Expanding the ESLint configuration
+![Tecnologias](https://skillicons.dev/icons?i=html,css,typescript,react,tailwindcss,vite,git)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Índice
 
-- Configure the top-level `parserOptions` property like this:
+- [Planner ](#planner-)
+  - [Sobre](#sobre)
+  - [Tecnologias](#tecnologias)
+  - [Índice](#índice)
+  - [Fotos](#fotos)
+  - [Instalação](#instalação)
+  - [Contatos](#contatos)
+- [](#)
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+## Fotos
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+![Main](public/main.png)
+![Stage2](public/stage2.png)
+
+
+
+## Instalação
+
+- **Instalação**
+  - npm install
+- **Rodando o app**
+  - npm run dev
+
+## Contatos
+
+[![Instagram](https://img.shields.io/badge/Instagram-%231DA1F2.svg?&style=for-the-badge&logo=twitter&logoColor=white)](https://instagram.com/pedro.liveiram)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/pedro-oliveira-m/)
+[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:pedropucmont@gmail.com)
+
+#
